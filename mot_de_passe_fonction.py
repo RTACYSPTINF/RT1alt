@@ -94,3 +94,4 @@ def mdp_non_double(N):
     return "".join(l_mdp)
     
     
+print(mdp_temp(10))
