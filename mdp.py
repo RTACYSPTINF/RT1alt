@@ -21,7 +21,7 @@ TOTAL=LETTRE + DIGIT + CARACTERE
 def mdp_base(N):
     """
     cette fonction va nour retourner un mot de passe de longueur N
-    Chacun des caractère du mot de passe est pris au hasard dans
+    Chacun des caractères du mot de passe est pris au hasard dans
     TOTAL
     :param N: entier nb de caratères du mdp
     :return: une chaine qui est le mot de passe
@@ -33,8 +33,8 @@ def mdp_base(N):
 
 def compte(temp):
     """
-    cette fonction est capable de compter le nombre d'occurence
-    de chacun des type de caractères suivants :
+    cette fonction est capable de compter le nombre d'occurences
+    de chacun des types de caractères suivants :
     MAJUS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     MINUS = 'abcdefghijklmnopqrstuvwxyz'
     DIGIT = '0123456789'
@@ -44,7 +44,7 @@ def compte(temp):
     temp=['a','v','@', '5','R','j']
     d={"MINUS": 3, "MAJUS": 1, "DIGIT": 1, "CARACTERE": 1}
     :param temp: est une liste contenant les caractères du mot de passe
-    :return: un dictionnaire avec les occurence de chacun des type cités plus haut
+    :return: un dictionnaire avec les occurences de chacun des types cités plus haut
     """
     d = {"MINUS": 0, "MAJUS": 0, "DIGIT": 0, "CARACTERE": 0}
     for caractere in temp:
@@ -60,10 +60,10 @@ def compte(temp):
 
 def type_caractere(caractere):
     """
-    cette fonction prend le caractere fourni en paramètre
+    cette fonction prend le caractère fourni en paramètre
     elle retourne sont type parmi ces quatre valeurs
     "MAJUS", "MINUS", "DIGIT", "CARACTERE"
-    :param caractere:
+    :param caractere: c'est le caractère passé à la fonction. On veut trouver son type
     :return:
     """
     dico = {1: "MAJUS", 2: "MINUS", 3: "DIGIT", 4: "CARACTERE"}
