@@ -108,15 +108,19 @@ def change_caractere1(liste):
     # on veut changer ce type
     if type_carac0 == "MAJUS" :
         carac0=random.choice(d["MAJUS"])
+        memoire ="MAJUS"
     elif type_carac0 == "MINUS" :
         carac0 = random.choice(d["MINUS"])
+        memoire ="MINUS"
     elif type_carac0 == "DIGIT" :
         carac0 = random.choice(d["DIGIT"])
+        memoire = "DIGIT"
     elif type_carac0 == "CARACTERE" :
         carac0 = random.choice(d["CARACTERE"])
+        memoire = "CARACTERE"
     liste.pop(0)
     liste.insert(0,carac0)
-    return liste
+    return liste, memoire
 
 
 
@@ -130,29 +134,33 @@ def mdp_gene(N,dec):
     mdp=mdp_base(N)
     mdp=list(mdp)
     mdp_final=list()
-    print("mot de passe inirial", mdp)
+    print("mot de passe initial", mdp)
     L=[]
     for i in range(0,N,dec):
         temp=mdp[i:i+dec]
         print(temp)
         # dico qui compte le nombre de type de caractères
         # par tranche de "dec"
+        memoire = ""
         d=compte(temp)
-        if d['MINUS'] == dec:
-            liste_retour = change_caractere1(temp)
+        if d['MINUS'] == dec and memoire != 'MINUS':
+            liste_retour,memoire = change_caractere1(temp)
             L=L+temp
-        elif d['MAJUS'] == dec:
-            liste_retour = change_caractere1(temp)
+        elif d['MAJUS'] == dec and memoire != 'MAJUS':
+            liste_retour, memoire = change_caractere1(temp)
             L=L+temp
-        elif d['DIGIT'] == dec:
-            liste_retour = change_caractere1(temp)
+        elif d['DIGIT'] == dec  and memoire != 'DIGIT':
+            liste_retour, memoire = change_caractere1(temp)
             L=L+temp
-        elif d['CARACTERE'] == dec:
-            liste_retour = change_caractere1(temp)
+        elif d['CARACTERE'] == dec and  memoire != 'CARACTERE':
+            liste_retour, memoire = change_caractere1(temp)
             L=L+temp
+        else:
+            L=L+temp
+    print(L)
     return L
 if __name__=="__main__":
-    mdp_gene(20,2)
+    print(mdp_gene(40,3))
 
 
 
