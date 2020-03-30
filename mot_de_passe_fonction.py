@@ -5,6 +5,9 @@
 ce script doit fournie la possibilité de générer un mot de passe parmis un 
 certain jeux de caractères
 [a-z][A-Z] et[0-9] et [&#@{[(\])]}]
+
+cette version est temporaire,
+elle va être amélorée
 """
 import random
 import string
