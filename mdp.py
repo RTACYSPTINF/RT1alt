@@ -1,3 +1,12 @@
+"""
+Auteur : JP SPITONI
+IUT Annecy
+Département réseaux et télécommunication
+Le 30/03/2020
+Ce programme est un exercice proposé aux alternants RT1
+
+"""
+
 import string
 import random
 
@@ -143,7 +152,7 @@ def mdp_gene(N,dec):
             L=L+temp
     return L
 if __name__=="__main__":
-    pass
+    mdp_gene(20,2)
 
 
 
