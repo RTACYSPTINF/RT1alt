@@ -5,6 +5,10 @@ Département réseaux et télécommunication
 Le 30/03/2020
 Ce programme est un exercice proposé aux alternants RT1
 
+Il s'agit de générer un mot de passe avec un nombre de caractères N choisi par l'utilisateur. 
+le premiere focntion est : "mdp_base()". Elle génére un mot de passe de N caractères pris au hazard dans la liste TOTAL qui
+est un mélange de minuscules, majuscules de chiffres et de caractères spéciaux pris dans la liste "CARACTERE". 
+
 """
 
 import string
@@ -24,7 +28,7 @@ def mdp_base(N):
     Chacun des caractères du mot de passe est pris au hasard dans
     TOTAL
     :param N: entier nb de caratères du mdp
-    :return: une chaine qui est le mot de passe
+    :return: une chaine qui est le mot de passe "".join(L)
     """
     L=[] # liste des caractères du mot de passe
     for i in range(N):
@@ -85,18 +89,27 @@ def type_caractere(caractere):
 def change_caractere1(liste):
     """
     la liste doit contenir un nombre N de caractères issue du même jeu
-    MAJUS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    MINUS = 'abcdefghijklmnopqrstuvwxyz'
-    DIGIT = '0123456789'
-    CARACTERE = '&#{}[]@()\^%!?/$'
+    - soit issu de MAJUS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    - soit issu de MINUS = 'abcdefghijklmnopqrstuvwxyz'
+    - soit issu de DIGIT = '0123456789'
+    - soit issu de CARACTERE = '&#{}[]@()\^%!?/$'
     on doit changer le premier caractère de la liste
     pour qu'il soit d'un type différent
-    Exemple : Liste=['A', 'B', 'c', 'D']
+    Exemple : Liste=['A', 'B', 'C', 'D']. On doit changer le 'A' par un caractères autre qu'une majuscule
     cette focntion doit retourner la liste 'liste' avec le premier caractère changé
-    liste retournés => ['k', 'B', 'c', 'D'] ou bien ['@', 'B', 'c', 'D']
-    :param liste:
-    :return:
+    liste retournés => ['k', 'B', 'C', 'D'] ou bien ['@', 'B', 'C', 'D'] ou bien ['@', 'B', 'C', 'D']
+    :param liste: liste de N caractères de même type
+    :return: liste, memoire
+    liste est la liste avec le premier caractère qui a été changé
+    memoire contient une chaine qui est soit "MAJUS" ou "MINUS" ou "DIGIT" ou alors"CARACTERE"
+    La chaine memoire permet de savoir quels était le type du prmier caractère avant de le changer
+    Exemple : liste = ['A', 'B', 'C', 'D'] => memoire = "MAJUS"
+    si liste =['0', '7', '9', '4'] => memoire = "DIGIT"
+    etc
     """
+
+    # le dictionnaire d a comme clé le type de caractère et comme valeur l'association de tout les autres
+    # types sauf celui de a clé.
     d={
         "MAJUS":MINUS+CARACTERE+DIGIT,
        "MINUS": MAJUS+CARACTERE+DIGIT,
