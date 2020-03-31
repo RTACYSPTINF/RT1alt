@@ -6,7 +6,7 @@ Le 30/03/2020
 Ce programme est un exercice proposé aux alternants RT1
 
 Il s'agit de générer un mot de passe avec un nombre de caractères N choisi par l'utilisateur. 
-le premiere focntion est : "mdp_base()". Elle génére un mot de passe de N caractères pris au hazard dans la liste TOTAL qui
+le premiere fonction est : "mdp_base()". Elle génére un mot de passe de N caractères pris au hazard dans la liste TOTAL qui
 est un mélange de minuscules, majuscules de chiffres et de caractères spéciaux pris dans la liste "CARACTERE". 
 
 """
@@ -65,10 +65,10 @@ def compte(temp):
 def type_caractere(caractere):
     """
     cette fonction prend le caractère fourni en paramètre
-    elle retourne sont type parmi ces quatre valeurs
+    elle retourne son type parmi ces quatre valeurs
     "MAJUS", "MINUS", "DIGIT", "CARACTERE"
     :param caractere: c'est le caractère passé à la fonction. On veut trouver son type
-    :return:
+    :return: le type du caractère "caractere"
     """
     dico = {1: "MAJUS", 2: "MINUS", 3: "DIGIT", 4: "CARACTERE"}
     # on regarde de quel type est du caractère
