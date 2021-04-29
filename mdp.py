@@ -5,9 +5,10 @@ Département réseaux et télécommunication
 Le 30/03/2020
 Ce programme est un exercice proposé aux alternants RT1
 
-Il s'agit de générer un mot de passe avec un nombre de caractères N choisi par l'utilisateur. 
+Il s'agit de générer un mot de passe avec un nombre de caractères N choisis par l'utilisateur. 
 le premiere fonction est : "mdp_base()". Elle génére un mot de passe de N caractères pris au hazard dans la liste TOTAL qui
 est un mélange de minuscules, majuscules de chiffres et de caractères spéciaux pris dans la liste "CARACTERE". 
+Modif le 29/04/2021
 
 """
 
